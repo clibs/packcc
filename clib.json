@@ -1,0 +1,10 @@
+{
+  "name": "packcc",
+  "repo": "arithy/packcc",
+  "version": "master",
+  "description": "A parser generator for C",
+  "install": "command gcc 2>/dev/null && make -C build/gcc || command clang 2>/dev/null && make -C build/clang",
+  "src": [
+    "src/packcc.c"
+  ]
+}

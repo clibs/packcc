@@ -9,14 +9,14 @@ exit
 ## Source begins on line #10
 if $(uname -s | grep -q MINGW); then
   {
-    which clang 2>/dev/null && make -C build/mingw-clang && install -b build/mingw-clang/release/packcc $PREFIX/bin;
+    which clang 2>/dev/null && make -C build/mingw-clang && install -b build/mingw-clang/release/bin/packcc $PREFIX/bin;
   } || {
-    which gcc 2>/dev/null && make -C build/mingw-gcc && install -b build/mingw-clang/release/packcc $PREFIX/bin;
+    which gcc 2>/dev/null && make -C build/mingw-gcc && install -b build/mingw-clang/release/bin/packcc $PREFIX/bin;
   };
 else
   {
-    which clang 2>/dev/null && make -C build/clang && install -b build/clang/release/packcc $PREFIX/bin;
+    which clang 2>/dev/null && make -C build/clang && install -b build/clang/release/bin/packcc $PREFIX/bin;
   } || {
-    which gcc 2>/dev/null && make -C build/gcc && install -b build/clang/release/packcc $PREFIX/bin;
+    which gcc 2>/dev/null && make -C build/gcc && install -b build/clang/release/bin/packcc $PREFIX/bin;
   };
 fi

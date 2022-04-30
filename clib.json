@@ -3,7 +3,7 @@
   "repo": "arithy/packcc",
   "version": "master",
   "description": "A parser generator for C",
-  "install": "if [ $(uname -s) =~ MING* ]; then { which clang 2>/dev/null && make -C build/mingw-clang; } || { which gcc 2>/dev/null && make -C build/mingw-gcc; }; else { which clang 2>/dev/null && make -C build/clang; } || { which gcc 2>/dev/null && make -C build/gcc; }; fi",
+  "install": "if [[ $(uname -s) =~ MING* ]]; then { which clang 2>/dev/null && make -C build/mingw-clang && install -b /build/mingw-clang/release/packcc $PREFIX/bin; } || { which gcc 2>/dev/null && make -C build/mingw-gcc && install -b /build/mingw-clang/release/packcc $PREFIX/bin; }; else { which clang 2>/dev/null && make -C build/clang && install -b /build/clang/release/packcc $PREFIX/bin; } || { which gcc 2>/dev/null && make -C build/gcc && install -b /build/clang/release/packcc $PREFIX/bin; }; fi",
   "src": [
     "src/packcc.c"
   ]

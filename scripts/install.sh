@@ -7,7 +7,7 @@ mv clib.json.tmp clib.json
 exit
 ## end
 ## Source begins on line #10
-if grep -q MINGW <<< $(uname -s); then
+if $(uname -s | grep -q MINGW); then
   {
     which clang 2>/dev/null && make -C build/mingw-clang && install -b build/mingw-clang/release/packcc $PREFIX/bin;
   } || {
